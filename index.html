@@ -24,12 +24,20 @@
 
   <div class="product">
     <div class="photo-card">
+      <h3>pepsi can</h3>
       <img src="pepsi.jpg" alt="كانز بيبسي">
+      
+      <div class="options-box">
+        <label><input type="radio" name="pepsi-opt" value="سادة" checked> سادة</label>
+        <label><input type="radio" name="pepsi-opt" value="دايت"> دايت</label>
+      </div>
+
       <div class="quantity-price-box">
         <span class="item-price">25 EGP</span>
         <div class="quantity-control">
           <button class="control-btn minus-btn">-</button>
-          <span class="quantity-number">0</span> <button class="control-btn plus-btn">+</button> 
+          <span class="quantity-number">0</span>
+          <button class="control-btn plus-btn">+</button> 
         </div>
       </div>
       <button class="order-now">order now</button>
@@ -37,8 +45,16 @@
   </div> 
 
   <div class="product">
+ 
     <div class="photo-card">
+        <h3>cocacola can</h3> 
       <img src="cocacola.jpg" alt="كانز كوكاكولا">
+      
+      <div class="options-box">
+        <label><input type="radio" name="coca-opt" value="سادة" checked> سادة</label>
+        <label><input type="radio" name="coca-opt" value="دايت"> دايت</label>
+      </div>
+
       <div class="quantity-price-box">
         <span class="item-price">30 EGP</span>
         <div class="quantity-control">
@@ -53,7 +69,19 @@
 
   <div class="product">
     <div class="photo-card">
+      <h3>coffee</h3>
       <img src="latte.jpg" alt="كوب لاتيه">
+      
+      <div class="options-box coffee-options">
+        <p style="font-size: 13px; font-weight: bold; margin-bottom: 5px;">درجة السكر:</p>
+        <label><input type="radio" name="latte-sugar" value="سادة" checked> سادة</label>
+        <label><input type="radio" name="latte-sugar" value="مضبوط"> مضبوط</label>
+        <label><input type="radio" name="latte-sugar" value="زيادة"> زيادة</label>
+        <label><input type="radio" name="latte-sugar" value="زيادة سكر"> زيادة سكر</label>
+        <hr style="margin: 8px 0; background-color: #eee;">
+        <label><input type="checkbox" class="cream-opt" value="مع وايت كريم"> 🍦 إضافة وايت كريم</label>
+      </div>
+
       <div class="quantity-price-box">
         <span class="item-price">45 EGP</span>
         <div class="quantity-control">
@@ -67,7 +95,7 @@
   </div>
 
   <div class="product">
-    <button class="order-all-btn">order all now 🛒</button>
+    <button class="order-all-btn">اطلب كل الطلبات الحالية 🛒</button>
   </div>
 
   <script src="script.js"></script>
