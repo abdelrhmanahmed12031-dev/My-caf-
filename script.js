@@ -82,6 +82,54 @@ orderAllBtn.addEventListener('click', () => {
     alert('سلتك فارغة! من فضلك زود كمية المنتجات التي تريدها أولاً 🛒');
   }
 });
+    if (count > 0) {
+      count--;
+      quantityNum.innerText = count;
+    }
+  });
+
+  // زرار الطلب المنفرد
+  orderBtn.addEventListener('click', () => {
+    if (count > 0) {
+      const productName = card.querySelector('img').getAttribute('alt');
+      const options = getSelectedOptions(card); // بيجيب الاختيارات
+      
+      const message = `مرحباً كافيه السعادة، أريد طلب:\n• المنتج: ${productName}${options}\n• العدد: ${count}`;
+      const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    } else {
+      alert('من فضلك حدد الكمية أولاً قبل الضغط على طلب!');
+    }
+  });
+});
+
+// زرار اطلب الكل المجمع
+const orderAllBtn = document.querySelector('.order-all-btn');
+
+orderAllBtn.addEventListener('click', () => {
+  const allCards = document.querySelectorAll('.photo-card');
+  let finalOrder = "مرحباً كافيه السعادة، أريد طلب الآتي:\n";
+  let hasOrders = false;
+
+  allCards.forEach(card => {
+    const quantity = parseInt(card.querySelector('.quantity-number').innerText) || 0;
+    
+    if (quantity > 0) {
+      const productName = card.querySelector('img').getAttribute('alt');
+      const options = getSelectedOptions(card); // بيجيب الاختيارات لكل منتج اتحدد كميته
+      
+      finalOrder += `• ${productName}${options} - العدد: ${quantity}\n`;
+      hasOrders = true;
+    }
+  });
+
+  if (hasOrders) {
+    const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(finalOrder)}`;
+    window.open(whatsappUrl, '_blank');
+  } else {
+    alert('سلتك فارغة! من فضلك زود كمية المنتجات التي تريدها أولاً 🛒');
+  }
+});
 });
 
 
